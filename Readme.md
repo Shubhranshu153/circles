@@ -63,6 +63,7 @@ Credits: https://www.binarytides.com/install-wxwidgets-ubuntu/
     - First Release
     - Known Bug
         - The screen resets on increasing or decreasing size of the window
+        - Activation of gridpoints near midway of 2 gridpoints is left biased. 
 
 
 ## Authors
