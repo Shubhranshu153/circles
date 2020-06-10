@@ -11,6 +11,7 @@
 #define PIXTODOTS 40
 #define STARTDOT 75
 #define STARTDOTCENTER STARTDOT+GRIDDOTSIZE/2
+#define GRIDSIZE 20
 
 using namespace std;
 
@@ -30,24 +31,24 @@ public:
         wxClientDC grid_init(this);
         wxPoint origin = grid_init.GetDeviceOrigin();
         grid_init.SetDeviceOrigin(origin.x, origin.y);
-
+        wxPen pen(*wxLIGHT_GREY, 1);
+        grid_init.SetPen(pen);
+        grid_init.SetBrush(wxBrush(*wxLIGHT_GREY));
         for (int x = 0; x < FIELDWIDTH; x++)
         {
             for (int y = 0; y < FIELDHEIGHT; y++)
-            {
-                wxPen pen(*wxLIGHT_GREY, 1);
-                grid_init.SetPen(pen);
-                grid_init.SetBrush(wxBrush(*wxLIGHT_GREY));
-                grid_init.DrawRectangle(STARTDOT + x * PIXTODOTS, STARTDOT + y * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
-                grid_init.SetPen(wxNullPen);
-                grid_init.SetBrush(wxNullBrush);
+            {         
+                grid_init.DrawRectangle(STARTDOT + x * PIXTODOTS, STARTDOT + y * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);  
             }
         }
+        grid_init.SetPen(wxNullPen);
+        grid_init.SetBrush(wxNullBrush);
     }
     
     void onMouseClick(wxMouseEvent &event)
     {
-
+        
+        
         static bool draw_grid = 0;
         static bool refresh = 0;
         
@@ -175,16 +176,29 @@ public:
             wxPen pen(*wxBLUE, 1); // red pen of width 1
             dRect.SetPen(pen);
             dRect.SetBrush(wxBrush(*wxBLUE));
+            if( x+xc< GRIDSIZE && y+yc <GRIDSIZE && x+xc>0 && y+yc >0  )
+                dRect.DrawRectangle(STARTDOT + (x + xc) * PIXTODOTS, STARTDOT + (y + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
 
-            dRect.DrawRectangle(STARTDOT + (x + xc) * PIXTODOTS, STARTDOT + (y + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
-            dRect.DrawRectangle(STARTDOT + (-x + xc) * PIXTODOTS, STARTDOT + (y + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
-            dRect.DrawRectangle(STARTDOT + (x + xc) * PIXTODOTS, STARTDOT + (-y + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
-            dRect.DrawRectangle(STARTDOT + (-x + xc) * PIXTODOTS, STARTDOT + (-y + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
+            if(-x+xc< GRIDSIZE && y+yc <GRIDSIZE && -x+xc> 0 && y+yc>0)    
+                dRect.DrawRectangle(STARTDOT + (-x + xc) * PIXTODOTS, STARTDOT + (y + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
+            
+            if(x+xc< GRIDSIZE && -y+yc <GRIDSIZE && x+xc>0 && -y+yc > 0 )
+                dRect.DrawRectangle(STARTDOT + (x + xc) * PIXTODOTS, STARTDOT + (-y + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
+            
+            if(-x+xc< GRIDSIZE && -y+yc <GRIDSIZE && -x+xc> 0 && -y+yc >0)
+                dRect.DrawRectangle(STARTDOT + (-x + xc) * PIXTODOTS, STARTDOT + (-y + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
 
-            dRect.DrawRectangle(STARTDOT + (y + xc) * PIXTODOTS, STARTDOT + (x + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
-            dRect.DrawRectangle(STARTDOT + (y + xc) * PIXTODOTS, STARTDOT + (-x + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
-            dRect.DrawRectangle(STARTDOT + (-y + xc) * PIXTODOTS, STARTDOT + (x + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
-            dRect.DrawRectangle(STARTDOT + (-y + xc) * PIXTODOTS, STARTDOT + (-x + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
+            if(y+xc< GRIDSIZE && x+yc <GRIDSIZE && y+xc> 0 && x+yc >0)
+                dRect.DrawRectangle(STARTDOT + (y + xc) * PIXTODOTS, STARTDOT + (x + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
+            
+            if(y+xc< GRIDSIZE && -x+yc <GRIDSIZE && y+xc> 0 && -x+yc >0)
+                dRect.DrawRectangle(STARTDOT + (y + xc) * PIXTODOTS, STARTDOT + (-x + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
+            
+            if(-y+xc< GRIDSIZE && x+yc <GRIDSIZE&& -y+xc> 0 && x+yc >0)    
+                dRect.DrawRectangle(STARTDOT + (-y + xc) * PIXTODOTS, STARTDOT + (x + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
+            
+            if(-y+xc< GRIDSIZE && -x+yc <GRIDSIZE && -y+xc> 0 && -x+yc >0)
+                dRect.DrawRectangle(STARTDOT + (-y + xc) * PIXTODOTS, STARTDOT + (-x + yc) * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
 
             dRect.SetPen(wxNullPen);
             dRect.SetBrush(wxNullBrush);
