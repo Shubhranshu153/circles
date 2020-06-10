@@ -1,4 +1,4 @@
-# A* Path Planning based Maze Solver
+# Problem1 - Circle Drawer
 
 # Introduction
 This code creates an App that allows user to create circle by drag and release.
