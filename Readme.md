@@ -43,7 +43,7 @@ Credits: https://www.binarytides.com/install-wxwidgets-ubuntu/
 ### How To Use
 - After the prerequisites are done download the github repository
 -  $ make (type make to invoke the make file)
-- ./CircleDrawer
+- ./CircleDraw
 
 ## Versioning
 - 1.0
