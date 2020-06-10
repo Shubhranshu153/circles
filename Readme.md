@@ -1,4 +1,4 @@
-# Problem1 - Circle Drawer
+# Program1 - Circle Drawer
 
 # Introduction
 This code creates an App that allows user to create circle by drag and release.
