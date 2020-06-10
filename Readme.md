@@ -49,6 +49,15 @@ Credits: https://www.binarytides.com/install-wxwidgets-ubuntu/
 -  $ make (type make to invoke the make file)
 - ./CircleDraw
 
+## Test Cases
+### Manual Testing
+- Constructing Different size circles (small to large)
+- Closing and opening the application
+- Checking mouse click to activate the desired grid points (Corners and center locations)
+- Left click refresh
+### Unit Testing
+- TODO
+
 ## Versioning
 - 1.0
     - First Release
