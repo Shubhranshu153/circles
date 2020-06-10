@@ -17,7 +17,8 @@ For activating the points to represent the circle breshenham circle drawing algo
 credits: https://www.tutorialspoint.com/computer_graphics/circle_generation_algorithm.htm
 
 # GUI
-The interface used is wxWidgets to create the GUI which is platform agnostic.
+The interface used is wxWidgets to create the GUI which is platform agnostic. The interface can be installed in Windows, Linux and Mac.
+
 
 ## Getting Started
 
@@ -28,8 +29,21 @@ These instructions is to help you get started,
 - g++ Compiler
 - wxWidgets
 
+### Installing wxWidgets 
+#### Linux
+- $ sudo apt-get install libgtk-3-dev build-essential checkinstall
+- Download and Extract wxWidget. https://www.wxwidgets.org/downloads/
+- $ mkdir gtk-build
+- $ cd gtk-build/
+- $ ../configure --disable-shared --enable-unicode
+- $ make
+It Takes about 20 mins to build.
+Credits: https://www.binarytides.com/install-wxwidgets-ubuntu/
+
 ### How To Use
-- The Executable Provided is meant to be run in Linux Platforms. The GUI is used is plaform agnostic and can run in Windows, Mac and Linux.
+- After the prerequisites are done download the github repository
+-  $ make (type make to invoke the make file)
+- ./CircleDrawer
 
 ## Versioning
 - 1.0
