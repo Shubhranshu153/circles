@@ -41,6 +41,8 @@ These instructions is to help you get started,
 - $ cd gtk-build/
 - $ ../configure --disable-shared --enable-unicode
 - $ make
+
+
 It Takes about 20 mins to build.
 Credits: https://www.binarytides.com/install-wxwidgets-ubuntu/
 
