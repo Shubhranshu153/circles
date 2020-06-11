@@ -42,7 +42,7 @@ These instructions is to help you get started,
 - $ ../configure --disable-shared --enable-unicode
 - $ make
 
-### Installing in Windows
+#### Windows
 - A nice intro to setup wxWidgets Video: https://www.youtube.com/watch?v=sRhoZcNpMb4
 - Download the Windows zip file - https://www.wxwidgets.org/downloads/
 - Unpack it
