@@ -51,6 +51,7 @@ Credits: https://www.binarytides.com/install-wxwidgets-ubuntu/
 - Restart Visual Studio
 - To manual setup refer ~/docs/msw/install.md
 - For Auto setup use the property sheet. 
+- NOTE - The application build has to be done in x86 mode.
 
 
 It Takes about 20 mins to build.
