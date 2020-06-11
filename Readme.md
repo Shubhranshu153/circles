@@ -41,7 +41,7 @@ These instructions is to help you get started,
 - $ cd gtk-build/
 - $ ../configure --disable-shared --enable-unicode
 - $ make
-
+Credits: https://www.binarytides.com/install-wxwidgets-ubuntu/
 #### Windows
 - A nice intro to setup wxWidgets Video: https://www.youtube.com/watch?v=sRhoZcNpMb4
 - Download the Windows zip file - https://www.wxwidgets.org/downloads/
@@ -54,7 +54,7 @@ These instructions is to help you get started,
 
 
 It Takes about 20 mins to build.
-Credits: https://www.binarytides.com/install-wxwidgets-ubuntu/
+
 
 ### How To Use
 - After the prerequisites are done download the github repository
